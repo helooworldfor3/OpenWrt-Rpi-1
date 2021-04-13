@@ -34,6 +34,12 @@ git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk
 # Add luci-proto-minieap
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 
+# Add luci-app-netdata
+rm -rf ../lean/luci-app-netdata
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-netdata
+rm -rf ../../customfeeds/packages/admin/netdata
+svn co https://github.com/281677160/openwrt-package/trunk/netdata
+
 # Add ServerChan
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
@@ -101,3 +107,11 @@ popd
 
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
+
+# Modify default IP
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+
+# Add CUPInfo
+pushd package/lean/autocore/files/arm/sbin
+cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
+popd
