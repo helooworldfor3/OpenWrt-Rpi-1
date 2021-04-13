@@ -79,6 +79,9 @@ git clone --depth=1 https://github.com/NateLol/luci-app-oled
 # Add driver for rtl8821cu & rtl8812au-ac
 svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8812au-ac
 svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8821cu
+
+# Add rtl88x2bu
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl88x2bu
 popd
 
 # Mod zzz-default-settings
@@ -92,6 +95,16 @@ popd
 pushd feeds/packages/net
 rm -rf https-dns-proxy
 svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy
+popd
+
+# Add luci-app-ddnsto
+pushd package/network/services
+git clone --depth=1 https://github.com/linkease/ddnsto-openwrt
+popd
+
+# Add luci-app-linkease
+pushd package/network/services
+git clone --depth=1 https://github.com/linkease/linkease-openwrt
 popd
 
 # Use snapshots' syncthing package
