@@ -22,10 +22,10 @@ cp -r temp/luci/applications/luci-app-gowebdav luci/applications/luci-app-gowebd
 cp -r temp/packages/net/gowebdav packages/net/gowebdav
 
 # Add netdata
-rm -rf packages/admin/netdata
-rm -rf ../package/lean/luci-app-netdata
-cp -r temp/luci/applications/luci-app-netdata luci/applications/luci-app-netdata
-cp -r temp/packages/admin/netdata packages/admin/netdata
+#rm -rf packages/admin/netdata
+#rm -rf ../package/lean/luci-app-netdata
+#cp -r temp/luci/applications/luci-app-netdata luci/applications/luci-app-netdata
+#cp -r temp/packages/admin/netdata packages/admin/netdata
 
 # Add luci-app-smartdns
 cp -r temp/luci/applications/luci-app-smartdns luci/applications/luci-app-smartdns
